@@ -1,14 +1,36 @@
 function hasTargetSum(array, target) {
   // Write your algorithm here
+  let seenNumb = new Set();
+
+  for (let num of array) {
+    let difference = target - num;
+    if (seenNumb.has(difference)) {
+      return true;
+    } else {
+      seenNumb.add(num);
+    }
+  }
+
+  return false;
 }
 
-/* 
+/*
   Write the Big O time complexity of your function here
 */
 
-/* 
+
+/*
   Add your pseudocode here
-*/
+  1.Create an empty set to store SeenNumb
+  2.Iterate through the array
+  3.For each number in the array, calculate the difference between the target and the current number.
+  4.Check if the difference exists in the set. If it does, return true .
+  5.If the difference doesn't exist in the set, add the current number to the set.
+  6.If no pair found return False.
+
+
+
+
 
 /*
   Add written explanation of your solution here
